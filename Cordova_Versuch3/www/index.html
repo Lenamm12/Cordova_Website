@@ -1,44 +1,81 @@
 ﻿<!DOCTYPE html>
-<html>
+<html style="height:100%">
 <head>
-    <!--
-        Passen Sie die Inhaltssicherheitsrichtlinie im META-Tag unten nach Bedarf an. Fügen Sie "default-src" die Option "unsafe-inline" hinzu, um Inline-JavaScript zu aktivieren.
-        Details finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=617521".
-    -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta charset="utf-8">
+    <meta http-equiv=Content-Type content="text/html; charset=unicode">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
 
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="../Content/bootstrap-grid.min.css">
-    <script src="../Scripts/jquery-3.0.0.min.js"></script>
-    <script src="../Scripts/umd/popper.min.js"></script>
-    <script src="../Scripts/bootstrap.min.js"></script>
 
-    <title>CordovaVersuch3</title>
+    <link rel="stylesheet" href="Uebersicht.css" />
+    <!--<script src="Uebersicht.js" charset="utf-8"></script>-->
+    <script>
+        document.get
+    </script>
 </head>
-<body>
-    <div class="app">
-        <h1>Willkommen !</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Ladevorgang...</p>
-            <a href="Home.html" class="event received" style="text-decoration:none">STARTEN</a>
+<body style="/*background-color:#0597fe; background-image:url(compass2.jpg);background-repeat:no-repeat;*/
+background-size:contain;
+background-position:bottom;width:100%; min-height:100%">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html"><img src="images/logo-saarland.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Suche.html">Suche</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="unsereschulen.html">Unsere Schulen</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UEbersicht.html">Übersicht</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <h4><u>Kein Abschluss ohne Anschluss</u></h4>
+        </div>
+        <div class="row">
+            <p>
+                <a href="Uebersicht.html" style="color:black">
+                    Nach jedem erfolgreichen
+                    Abschluss warten auf dich weitere interessante Möglichkeiten.<br>
+                    Egal ob du von einer allgemeinbildenden Schule kommst oder von einer anderen
+                    Beruflichen Schule im Saarland, hier erfährst du <u>was</u> dein nächster
+                    Abschluss ist und <u>wo</u> du ihn machen kannst.
+                </a>
+            </p>
+        </div>
+        <div class="row">
+            <h4>
+                <u>Finde deine nächste Schule</u>
+            </h4>
+        </div>
+        <div class="row">
+            <p>
+                <a href="Suche.html" style="color:black">
+                    Du suchst eine Alternative zu einer
+                    allgemeinbildenende Schule? <br>
+                    Oder du hast dich bereits über deinen nächsten Abschluss informiert und suchst
+                    eine passende Schule dafür?<br>
+                    In unserer <b>Suche</b> grenzt du die beruflichen Schulen auf den Ort, deine
+                    Interessen und deinen bisherigen Abschluss ein.
+                </a>
+            </p>
         </div>
     </div>
-
-    <!--<div id="deviceready">
-        <button class="event received" type="button">Übersicht</button><br />
-        <button class="event received" type="button">Suche</button><br />
-        <button class="event received" type="button">Impressum</button>
-    </div>-->
-
-
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
 </body>
+
 </html>
