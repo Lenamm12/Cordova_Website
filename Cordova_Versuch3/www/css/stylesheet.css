@@ -50,7 +50,7 @@ img.hintergrund{
     overflow: hidden;
 }
 
-@media only screen and (min-width:576px){
+@media only screen and (min-width:768px){
     p.textRight {
         text-align:right;
     }

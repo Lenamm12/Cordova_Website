@@ -49,6 +49,276 @@ var schDetails = ["Name", "Voraussetzungen", "Standort", "Dauer", "Abschluss"];
 var standort0 = document.getElementById("eingabeSuchort");
 var umkreis0 = document.getElementById("umkreis");
 
+//////////////
+
+
+var schulstandorte = [
+    { id: '0', name: 'Berufsbildungszentrum (BBZ) Hochwald', strasse: 'Weiskircher Straße 32', plzort: '66687 Wadern-Nunkirchen', tel: 'Tel.: (06874)186990-0', fax: 'Fax: (06874)186990-30', mail: 'sekretariat@bbz-hochwald.de', web: 'www.bbz-hochwald.de' },
+    { id: '1', name: 'Berufsbildungszentrum (BBZ) Homburg', strasse: 'Karlstraße 6', plzort: '66424 Homburg', tel: 'Tel.: (06841)9301-0', fax: 'Fax: (06841)9301-12', mail: 'info@bbz-hom.de', web: 'www.bbz-hom.de' },
+    { id: '2', name: 'Berufsbildungszentrum (BBZ) Lebach', strasse: 'Friedensstraße 4', plzort: '66822 Lebach', tel: 'Tel.: (06881)2610', fax: 'Fax: (06881)52602', mail: 'buero@bbzlebach.de', web: 'www.bbzlebach.de' },
+    { id: '3', name: 'Berufsbildungszentrum (BBZ) Merzig', strasse: 'Waldstraße 51', plzort: '66663 Merzig', tel: 'Tel.: (06861)939830', fax: 'Fax: (06861)9398320', mail: 'info@bbz-merzig.de', web: 'www.bbz-merzig.de' },
+    { id: '4', name: 'Berufsbildungszentrum (BBZ) St. Ingbert', strasse: 'Johann-Josef-Heinrich-Straße 2', plzort: '66386 St. Ingbert', tel: 'Tel.: (06894)99889-0', fax: 'Fax: (06894)99889-99', mail: 'info@bbz-igb.de', web: 'www.bbz-igb.de' },
+    { id: '5', name: 'Berufsbildungszentrum (BBZ) St. Wendel', strasse: 'Werschweilerstraße 41', plzort: '66606 St. Wendel', tel: 'Tel.: (06851)9311-0', fax: 'Fax: (06851)9311-20', mail: 'tgbbz@dr-walter-bruch-schule.de', web: 'www.dr-walter-bruch-schule.de' },
+    { id: '6', name: 'Berufsbildungszentrum (BBZ) Sulzbach', strasse: 'Schillerstraße 7', plzort: '66280 Sulzbach', tel: 'Tel.: (06897)92260', fax: 'Fax: (06897)54346', mail: 'zentrale@bbz-sulzbach.de', web: 'www.bbz-sulzbach.de' },
+    { id: '7', name: 'Berufsbildungszentrum (BBZ) Völklingen ', strasse: 'Am Bachberg 1', plzort: '66333 Völklingen', tel: 'Tel.: (06898)91280', fax: 'Fax: (06898)295834', mail: 'post@bbz-voelklingen.de', web: 'www.bbz-voelklingen.de' },
+    { id: '8', name: 'Kaufmännisches Berufsbildungszentrum (K BBZ) Dillingen', strasse: 'Hinterstraße 11', plzort: '66763 Dillingen', tel: 'Tel.: (06831)976126', fax: 'Fax: (06831)976127', mail: 'info@kbbz-dillingen.de', web: 'www.kbbz-dillingen.de' },
+    { id: '9', name: 'Kaufmännisches Berufsbildungszentrum (K BBZ) Neunkirchen', strasse: 'Unten am Steinwald', plzort: '66538 Neunkirchen', tel: 'Tel.: (06821)92280', fax: 'Fax: (06821)922830', mail: 'info@kbbz-neunkirchen.de', web: 'www.kbbz-neunkirchen.de' },
+    { id: '10', name: 'Kaufmännisches Berufsbildungszentrum (K BBZ) Saarbrücken', strasse: 'Stengelstraße 29', plzort: '66117 Saarbrücken', tel: 'Tel.: (0681)926760', fax: 'Fax: (0681)5849240', mail: 'sekretariat@kbbz-sb.de', web: 'www.kbbz-sb.de' },
+    { id: '11', name: 'Kaufmännisches Berufsbildungszentrum (K BBZ) Halberg', strasse: 'Kurt-Schumacher-Straße 20', plzort: '66130 Saarbrücken', tel: 'Tel.: (0681)880060', fax: 'Fax: (0681)8800644', mail: 'info@kbbz-halberg.de', web: 'www.kbbz-halberg.de' },
+    { id: '12', name: 'Kaufmännisches Berufsbildungszentrum (K BBZ) Saarlouis', strasse: 'Im Glacis 22', plzort: '66740 Saarlouis', tel: 'Tel.: (06831)94610', fax: 'Fax: (06831)946161', mail: 'sekretariat@kbbzsaarlouis.de', web: 'www.kbbzsaarlouis.de' },
+    { id: '13', name: 'Sozialpflegerisches Berufsbildungszentrum (S BBZ) Saarbrücken', strasse: 'Schmollerstraße 10', plzort: '66111 Saarbrücken', tel: 'Tel.: (0681)93802-0/-10/-11', fax: 'Fax: (0681)9380216', mail: 'verwaltung@sbbzsb.de', web: 'www.sbbzsb.de' },
+    { id: '14', name: 'Technisch-Gewerbliches Berufsbildungszentrum (TG BBZ) Dillingen', strasse: 'Wallerfanger Straße 14', plzort: '66763 Dillingen', tel: 'Tel.: (06831)72042', fax: 'Fax: (06831)702745', mail: 'sekretariat@tgbbzdillingen.de', web: 'www.tgbbzdillingen.de' },
+    { id: '15', name: 'Technisch-Gewerbliches und Sozialpflegerisches Berufsbildungszentrum (TGS BBZ) Neunkirchen', strasse: 'Jägermeisterpfad 4', plzort: '66538 Neunkirchen', tel: 'Tel.: (06821)92350', fax: 'Fax: (06821)923544', mail: 'info@tgsbbznk.de', web: 'www.tgsp-bbz-nk.de' },
+    { id: '16', name: 'Technisch-Gewerbliches Berufsbildungszentrum (TG BBZ) I Saarbrücken', strasse: 'Am Mügelsberg 1', plzort: '66111 Saarbrücken', tel: 'Tel.: (0681)9334-110', fax: 'Fax: (0681)374551', mail: 'info@tgbbz1-sb.de', web: 'www.tgbbz1-sb.de' },
+    { id: '17', name: 'Technisch-Gewerbliches Berufsbildungszentrum (TG BBZ) II Saarbrücken', strasse: 'Am Mügelsberg 1', plzort: '66111 Saarbrücken', tel: 'Tel.: (0681)9334-200', fax: 'Fax: (0681)9334-203', mail: 'info@tgbbz2-saarbruecken.de', web: 'www.tgbbz2-sb.de' },
+    { id: '18', name: 'Technisch-Gewerbliches und Sozialpflegerisches Berufsbildungszentrum (TGS BBZ) Saarlouis', strasse: 'Zeughausstraße 25', plzort: '66740 Saarlouis', tel: 'Tel.: (06831)949830', fax: 'Fax: (06831)9498320', mail: 'sekretariat@tgsbbz-saarlouis.de', web: 'www.tgsbbz-saarlouis.de' },
+    { id: '19', name: 'Günther-Wöhe-Schulen für Wirtschaft', strasse: 'Keplerstraße 7', plzort: '66117 Saarbrücken', tel: 'Tel.: (0681)926470', fax: 'Fax: (0681)9264726', mail: 'sek-fos@gws-sbr.de', web: 'www.gws-sbr.de' }
+];
+
+var schulformen = [
+    { id: '0', art: 'Berufsvorbereitungsjahr', form: 'Produktionsschule' },
+    { id: '1', art: 'Berufsvorbereitungsjahr', form: 'Werkstattschule' },
+    { id: '2', art: 'Berufsvorbereitungsjahr', form: 'Berufsgrundbildungsjahr' },
+    { id: '3', art: 'Berufsvorbereitungsjahr', form: 'Berufsgrundschule' },
+    { id: '4', art: 'Berufsfachschule', form: 'Gewerbeschule' },
+    { id: '5', art: 'Berufsfachschule', form: 'Handelsschule' },
+    { id: '6', art: 'Berufsfachschule', form: 'Sozialpflegeschule' },
+    { id: '7', art: 'Berufsfachschule', form: 'Kinderpflege' },
+    { id: '8', art: 'Berufsfachschule', form: 'Haushaltsführung und ambulante Betreuung' },
+    { id: '9', art: 'Berufsschule', form: 'Berufsschule' },
+    { id: '10', art: 'Fachoberschule', form: 'Design' },
+    { id: '11', art: 'Fachoberschule', form: 'Ernährung und Hauswirtschaft' },
+    { id: '12', art: 'Fachoberschule', form: 'Naturwissenschaft und Umwelttechnik' },
+    { id: '13', art: 'Fachoberschule', form: 'Gesundheit und Soziales' },
+    { id: '14', art: 'Fachoberschule', form: 'Technik' },
+    { id: '15', art: 'Fachoberschule', form: 'Französisch in Wirtschaft und Verwaltung' },
+    { id: '16', art: 'Fachoberschule', form: 'Technische Informatik' },
+    { id: '17', art: 'Fachoberschule', form: 'Tourismus' },
+    { id: '18', art: 'Fachoberschule', form: 'Wirtschaft' },
+    { id: '19', art: 'Fachoberschule', form: 'Wirtschaftsinformatik' },
+    { id: '20', art: 'Berufliches Gymnasium', form: 'Gesundheit und Soziales' },
+    { id: '21', art: 'Berufliches Gymnasium', form: 'Technik' },
+    { id: '22', art: 'Berufliches Gymnasium', form: 'Wirtschaft' },
+    { id: '23', art: 'Höhere Berufsfachschule', form: 'Automatisierungstechnik' },
+    { id: '24', art: 'Höhere Berufsfachschule', form: 'Fremdsprachen in Wirtschaft und Verwaltung' },
+    { id: '25', art: 'Höhere Berufsfachschule', form: 'Hotel-, Gaststätten- und Fremdenverkehrsgewerbe' },
+    { id: '26', art: 'Höhere Berufsfachschule', form: 'Wirtschaftsinformatik' },
+    { id: '27', art: 'Berufliche Weiterbildung', form: 'Akademie für Betriebs- und Unternehmensführung' },
+    { id: '28', art: 'Berufliche Weiterbildung', form: 'Fachschule für Sozialpädagogik' },
+    { id: '29', art: 'Berufliche Weiterbildung', form: 'Fachschule für das Hotel und Gaststättengewerbe' },
+    { id: '30', art: 'Berufliche Weiterbildung', form: 'Fachschule für Meister/-innen der Hauswirtschaft' },
+    { id: '31', art: 'Berufliche Weiterbildung', form: 'Fachschule für Technik' }
+];
+
+var schulformenprostandort = [
+    [0, -1, 2, 3, -1, 5, 6, -1, -1, 9, -1, -1, -1, -1, -1, -1, -1, 17, 18, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [0, -1, 2, 3, 4, 5, 6, -1, -1, 9, -1, -1, -1, 13, 14, -1, -1, -1, 18, 19, 20, -1, 22, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [0, -1, 2, 3, -1, 5, 6, -1, -1, 9, -1, -1, -1, 13, -1, -1, -1, -1, 18, -1, 20, -1, 22, -1, -1, -1, -1, -1, -1, -1, -1, 31],
+    [0, -1, 2, 3, 4, 5, 6, -1, 8, 9, -1, -1, -1, 13, 14, -1, -1, -1, 18, -1, 20, -1, 22, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [0, -1, 2, 3, 4, 5, 6, -1, 8, 9, -1, -1, -1, 13, 14, -1, -1, -1, 18, -1, 20, 21, 22, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [0, 1, 2, 3, 4, 5, 6, -1, 8, 9, -1, -1, -1, 13, 14, -1, -1, -1, 18, 19, 20, 21, 22, -1, -1, -1, -1, -1, 28, -1, -1, -1],
+    [0, -1, 2, -1, 4, 5, -1, -1, -1, 9, -1, -1, -1, -1, -1, 15, -1, -1, 18, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [0, 1, 2, -1, 4, 5, -1, -1, -1, 9, -1, -1, 12, -1, 14, -1, 16, -1, 18, -1, -1, 21, -1, 23, -1, -1, -1, -1, -1, -1, -1, -1],
+    [-1, -1, 2, -1, -1, 5, -1, -1, -1, 9, -1, -1, -1, -1, -1, -1, -1, -1, 18, 19, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [-1, -1, 2, -1, -1, 5, -1, -1, -1, 9, -1, -1, -1, -1, -1, 15, -1, -1, 18, -1, 20, -1, 22, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [-1, -1, 2, -1, -1, -1, -1, -1, -1, 9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 24, -1, -1, -1, -1, -1, -1, -1],
+    [-1, -1, -1, -1, -1, -1, -1, -1, -1, 9, -1, -1, -1, -1, -1, -1, -1, -1, 18, -1, -1, -1, -1, -1, -1, -1, 26, 27, -1, -1, -1, -1],
+    [-1, -1, 2, -1, -1, 5, -1, -1, -1, 9, -1, -1, -1, -1, -1, -1, -1, -1, 18, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [0, -1, -1, 3, -1, -1, 6, 7, -1, 9, -1, -1, -1, 13, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 28, -1, 30, -1],
+    [0, 1, 2, -1, 4, -1, -1, -1, -1, 9, -1, -1, -1, -1, 14, -1, 16, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [0, 1, 2, 3, 4, -1, 6, 7, -1, 9, -1, -1, -1, 13, 14, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [0, 1, 2, -1, 4, -1, -1, -1, -1, 9, -1, -1, -1, -1, 14, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+    [0, -1, 2, -1, -1, -1, -1, -1, -1, 9, 10, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 25, -1, -1, -1, 29, -1, -1],
+    [0, -1, 2, 3, -1, -1, 6, 7, -1, 9, 10, -1, -1, 13, 14, -1, -1, -1, -1, -1, 20, -1, 22, -1, -1, -1, -1, -1, 28, -1, -1, -1],
+    [-1, -1, -1, -1, -1, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 18, 19, 20, -1, 22, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+];
+
+function options(value, index) {
+    var formen = Array.from(new Set(schulformen.form));
+    var ausgabe =
+        "<select name=\"Interessen\" id=\"interessen\" style=\"width:100%;font-size:25px\" required>" +
+        formen.forEach(function (Form) {
+            "<option>" + Form + "</option>";
+        }) +
+        "</select >";
+    return ausgabe;
+}
+
+class suchen {
+    static Schulen(arrayStandorte, arrayFormen) {
+
+        //
+
+
+        var neuerContainerSch = document.createElement('div');
+        neuerContainerSch.className = "container-fluid";
+        neuerContainerSch.style.border = "1px solid rgb(131,146,178)";
+        neuerContainerSch.style.marginBottom = "1px";
+        VA.appendChild(neuerContainerSch);
+
+        var ÜberschriftSch = document.createElement('div');
+        ÜberschriftSch.className = "urow";
+        ÜberschriftSch.style.overflow = "hidden";
+        ÜberschriftSch.style.marginTop = "0";
+        ÜberschriftSch.style.marginBottom = "0";
+        neuerContainerSch.appendChild(ÜberschriftSch);
+
+        var inhaltUSch = document.createElement('div');
+        inhaltUSch.className = "col-12";
+        ÜberschriftSch.appendChild(inhaltUSch);
+
+        var paraSch = document.createElement('p');
+        paraSch.id = "HBFS";
+        inhaltUSch.appendChild(paraSch);
+        paraSch.style.fontSize = "35px";
+        paraSch.innerHTML = " Suchergebnisse Bezüglich '" + arrayFormen + "'";
+
+        var inhaltSch = document.createElement('div');
+        inhaltSch.className = "jrow";
+        inhaltSch.style.padding = " 0 18px 0 13px";
+        inhaltSch.style.display = "none";
+        inhaltSch.style.overflow = "hidden";
+        neuerContainerSch.appendChild(inhaltSch);
+
+        //
+
+        schulformenprostandort.forEach(function (arrayStandorte, arrayFormen, schulformenprostandort) {
+
+            if (schulformenprostandort[arrayFormen] === arrayFormen || schulformenprostandort === arrayStandorte) {
+
+                var ÜberschriftSchule = document.createElement('div');
+                ÜberschriftSchule.className = "frow";
+                ÜberschriftSchule.style.borderRadius = "0 40px 40px 0";
+                inhaltSch.appendChild(ÜberschriftSchule);
+
+                var inhaltColL = document.createElement('div');
+                inhaltColL.className = "col-12";
+                ÜberschriftSchule.appendChild(inhaltColL);
+
+                var paraÜ = document.createElement('p');
+                paraÜ.style.fontSize = "20px";
+                inhaltColL.appendChild(paraÜ);
+
+                //
+
+                for (var i = 1; i < schulstandorte.length; i++) {
+                    
+                    var AusgabeI = document.createElement('div');
+                    AusgabeI.className = "jrow";
+                    inhaltBBZ.appendChild(AusgabeI);
+
+                    var AusgabeCol = document.createElement('div');
+                    AusgabeCol.className = "col-sm-12";
+                    AusgabeI.appendChild(AusgabeCol);
+
+                    var paraI = document.createElement('p');
+                    AusgabeCol.appendChild(paraI);
+
+                    paraI.innerHTML = schulstandorte[i];
+
+                }
+
+                //
+
+
+                var inhalt2 = document.createElement('div');
+                inhalt2.className = "jrow";
+                inhaltSch.appendChild(inhalt2);
+
+                var inhaltCol2L = document.createElement('div');
+                inhaltCol2L.className = "col-sm-4";
+                inhalt2.appendChild(inhaltCol2L);
+                var inhaltCol2R = document.createElement('div');
+                inhaltCol2R.className = "col-sm-8";
+                inhalt2.appendChild(inhaltCol2R);
+
+                var paraLinks = document.createElement('p');
+                inhaltCol2L.appendChild(paraLinks);
+                var paraRechts = document.createElement('p');
+                paraRechts.className = "textRight";
+                inhaltCol2R.appendChild(paraRechts);
+
+                //
+
+                var inhalt2 = document.createElement('div');
+                inhalt2.className = "jrow";
+                inhaltSch.appendChild(inhalt2);
+
+                var inhaltCol2L = document.createElement('div');
+                inhaltCol2L.className = "col-sm-4";
+                inhalt2.appendChild(inhaltCol2L);
+                var inhaltCol2R = document.createElement('div');
+                inhaltCol2R.className = "col-sm-8";
+                inhalt2.appendChild(inhaltCol2R);
+
+                var paraLinks = document.createElement('p');
+                inhaltCol2L.appendChild(paraLinks);
+                var paraRechts = document.createElement('p');
+                paraRechts.className = "textRight";
+                inhaltCol2R.appendChild(paraRechts);
+
+                //
+
+                var inhalt2 = document.createElement('div');
+                inhalt2.className = "jrow";
+                inhaltSch.appendChild(inhalt2);
+
+                var inhaltCol2L = document.createElement('div');
+                inhaltCol2L.className = "col-sm-4";
+                inhalt2.appendChild(inhaltCol2L);
+                var inhaltCol2R = document.createElement('div');
+                inhaltCol2R.className = "col-sm-8";
+                inhalt2.appendChild(inhaltCol2R);
+
+                var paraLinks = document.createElement('p');
+                inhaltCol2L.appendChild(paraLinks);
+                var paraRechts = document.createElement('p');
+                paraRechts.className = "textRight";
+                inhaltCol2R.appendChild(paraRechts);
+
+                //
+
+                var inhalt2 = document.createElement('div');
+                inhalt2.className = "jrow";
+                inhaltSch.appendChild(inhalt2);
+
+                var inhaltCol2L = document.createElement('div');
+                inhaltCol2L.className = "col-sm-4";
+                inhalt2.appendChild(inhaltCol2L);
+                var inhaltCol2R = document.createElement('div');
+                inhaltCol2R.className = "col-sm-8";
+                inhalt2.appendChild(inhaltCol2R);
+
+                var paraLinks = document.createElement('p');
+                inhaltCol2L.appendChild(paraLinks);
+                var paraRechts = document.createElement('p');
+                paraRechts.className = "textRight";
+                inhaltCol2R.appendChild(paraRechts);
+
+                //
+
+                paraÜ.innerHTML = HBFSs[j]["Name"];
+                para12.innerHTML = schDetails[1];
+                para22.innerHTML = HBFSs[j]["Voraussetzung"];
+                para13.innerHTML = schDetails[2];
+                para23.innerHTML = HBFSs[j]["Standort"];
+                para14.innerHTML = schDetails[3];
+                para24.innerHTML = HBFSs[j]["Dauer"];
+                para15.innerHTML = schDetails[4];
+                para25.innerHTML = HBFSs[j]["Abschluss"];
+
+            }
+
+
+        });
+
+
+
+    }
+}
+////////////////
+
+
 var HBFSs = new Array();
 
 HBFSs[0] = new Object();
@@ -205,6 +475,8 @@ var Anzeige = [Schulen, Studienfächer];
 
 var lat1, lon1, lat2, lon2, pos;
 var entfernung;
+
+
 
 
 //
@@ -1275,7 +1547,7 @@ function Generieren(item, index) {
             inhalt1j.appendChild(inhaltColLj);
 
             var para1j = document.createElement('p');
-            para1j.style.fontSize = "30px";
+            para1j.style.fontSize = "25px";
             inhaltColLj.appendChild(para1j);
 
 
@@ -1293,7 +1565,7 @@ function Generieren(item, index) {
                 inhaltFach.appendChild(inhaltStandort);
 
                 var paraStSt = document.createElement('p');
-                paraStSt.style.fontSize = "30px";
+                paraStSt.style.fontSize = "25px";
                 inhaltStandort.appendChild(paraStSt);
 
                 paraStSt.innerHTML = Studienfächer[l][k];
