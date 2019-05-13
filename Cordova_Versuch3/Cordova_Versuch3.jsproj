@@ -85,6 +85,16 @@
     <Content Include="**\**" Exclude="**\platforms\**;**\bin\**;**\bld\**;**\node_modules\**;**\simulation\**;**\plugins\**;.gitignore;CordovaVersuch3.*" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove=".bin\bower.cmd" />
+    <Content Remove=".bin\git.cmd" />
+    <Content Remove=".bin\node.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".bin\bower.cmd" />
+    <None Include=".bin\git.cmd" />
+    <None Include=".bin\node.cmd" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Update="config.xml">
       <SubType>Designer</SubType>
     </Content>

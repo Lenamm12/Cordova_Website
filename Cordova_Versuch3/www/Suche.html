@@ -4,18 +4,18 @@
     <title>Die Suche</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../www/css/stylesheet.css">
+  <!--  <link rel="stylesheet" href="../www/css/stylesheet.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
-<body style="font-size:25px">
+<body> <!--style="font-size:25px"-->
     <!--<div class="jumbotron text-center" style="margin-bottom:5px"  >
         <h1>Willkommen</h1>
         <p>Hier findest du deinen Weg!</p>
     </div>-->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-white navbar-light">
         <a class="navbar-brand" href="index.html"><img src="images/logo-saarland.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -37,13 +37,13 @@
             </ul>
         </div>
     </nav>
-    <div class="container-fluid" style="margin-top:10px">
+    <div class="container-fluid" style="margin-top:10px; font-size:1rem">
         <div class="row Reihen" style="margin-bottom:5px">
-            <div class="col-sm-4">
-                <label style="font-size:25px">Ich habe: </label>
+            <div class="col-sm-2">
+                <label>Ich habe: </label>
             </div>
-            <div class="col-sm-8">
-                <select name="Abschluss" id="abschluss" style="width:100%;font-size:25px" required>
+            <div class="col-sm-10">
+                <select name="Abschluss" id="abschluss" style="width:100%" required>
                     <option>Nicht angegeben</option>
                     <option>Kein Hauptschulabschluss</option>
                     <option>Hauptschulabschluss</option>
@@ -64,39 +64,46 @@
             </div>
         </div>
         <div class="row Reihen">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <label>
-                    <input type="checkbox" name="option" value="Schulen" id="ipSchulen" style="font-size:20px" checked />
-                    Schulen
-                </label>
+                    Ich suche:
+                    </label>
+                </div>
+                    <div class="col-sm-3">
+                        <label>
+                            <input type="checkbox" name="option" value="Schulen" id="ipSchulen" checked />
+                            Schulen
+                        </label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>
+                            <input type="checkbox" name="option" value="Studium" id="ipStudium" checked />
+                            Studium
+                        </label>
+                    </div>
+                    <div class="col-sm-3">
+                        <label>
+                            <input type="checkbox" name="option" value="Ausbildung" id="ipAusbildung" checked />
+                            Ausbildung
+                        </label>
+                    </div>
             </div>
-            <div class="col-sm-4">
-                <label>
-                    <input type="checkbox" name="option" value="Studium" id="ipStudium" style="font-size:20px" checked />
-                    Studium
-                </label>
-            </div>
-            <div class="col-sm-4">
-                <label>
-                    <input type="checkbox" name="option" value="Ausbildung" id="ipAusbildung" style="font-size:20px" checked />
-                    Ausbildung
-                </label>
-            </div>
-        </div>
-        <div class="row Reihen">
-            <div class="col-sm-10">
-                <input type="text" placeholder="Suchort" id="eingabeSuchort" style="font-size:25px; width:100%" />
-            </div>
-            <div class="col-sm-2">
-                <input type="button" style="width:100%; height:100%" />
-            </div>
-        </div>
-        <div class="row Reihen">
-            <div class="col-sm-4">
-                <label style="font-size:25px">Bereich</label>
-            </div>
-            <div class="col-sm-8">
-                <select name="Reichweite" id="umkreis" style="font-size:25px;width:100%">
+        <div class="container-fluid">
+            <div class="row Reihen">
+                <div class="col-sm-6">
+                    <input type="text" placeholder="Suchort" id="eingabeSuchort" width:100%" style="vertical-align:top"/>
+                <!--</div>
+                <div class="col-sm-1">-->
+                    <input type="button" style="width:2rem" />
+                </div>
+            <!--</div>
+
+            <div class="row Reihen">-->
+                <div class="col-sm-6">
+                    <label>Bereich</label>
+                <!--</div>
+                <div class="col-sm-4">-->
+                    <select name="Reichweite" id="umkreis" <!--style="width:100%"-->>
                     <option>10 km</option>
                     <option>15 km</option>
                     <option>20 km</option>
@@ -104,14 +111,15 @@
                     <option>30 km</option>
                     <option>Ganzes Saarland</option>
                 </select>
+                </div>
             </div>
         </div>
-        <div class="row Reihen">
-            <div class="col">
-                <button type="submit" onclick="Generieren()" style="font-size:25px ;width:100%"> Los! </button>
+            <div class="row Reihen">
+                <div class="col">
+                    <button type="submit" onclick="Generieren()" style="width:100%"> Los! </button>
+                </div>
             </div>
         </div>
-    </div>
     <div id="VolleAnzeige" class="container-fluid">
     </div>
     <!--<script async defer

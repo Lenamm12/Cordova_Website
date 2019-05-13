@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-
     <title>Pfade zum Abschluss</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,11 +9,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
+   
     <script src="../www/scripts/Uebersicht.js"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap-toggle/css/bootstrap-toggle.min.css" />
+    <script src="../bower_components/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-white navbar-light">
         <a class="navbar-brand" href="index.html"><img src="images/logo-saarland.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -36,6 +37,19 @@
             </ul>
         </div>
     </nav>
+    <div style="margin:10px; border-color:black; border-width:medium">
+        <input style="margin:10px; border-color:black; border-width:medium" type="checkbox" checked data-toggle="toggle" data-on="Karte" data-off="Liste" data-onstyle="success" data-offstyle="primary">
+
+    </div>
+    <div>
+        <!--MAPS-->
+        <!--<script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByrFSb-3ZBmtjum59uZ0pOT8ZIUcLrLfc&callback=initMap">
+        </script>-->
+    </div>
+    <div>
+        <!--Liste-->
+    </div>
     <footer style="align-content:center">
 
         <a class="nav-link" href="Impressum.html" style="align-content:center">Impressum</a>
