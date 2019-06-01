@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Die Suche</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #map {
+            height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="../www/css/stylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body style="font-size:25px">
+    <nav class="navbar navbar-expand-sm bg-white navbar-light">
+        <a class="navbar-brand" href="index.html"><img src="images/logo-saarland.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Suche.html">Suche</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="unsereschulen.html">Unsere Schulen</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UEbersicht.html">Übersicht</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid" style="margin-top:10px">
+        <div class="row Reihen">
+            <div class="col-8">
+                <div class="row Reihen" style="margin-bottom:5px">
+                    <div class="col-sm-12">
+                        <label style="font-size:25px">Schulformen: </label>
+                    </div>
+                </div>
+                <div class="row Reihen">
+                    <div class="col-12">
+                        <select name="Interessen" id="Interessen" style="width:100%;font-size:25px" required>
+                            <option>Produktionsschule</option>
+                            <option>Werkstattschule</option>
+                            <option>Berufsgrundbildungsjahr</option>
+                            <option>Berufsgrundschule</option>
+                            <option>Gewerbeschule</option>
+                            <option>Handelsschule</option>
+                            <option>Sozialpflegeschule</option>
+                            <option>Kinderpflege</option>
+                            <option>Haushaltsführung und ambulante Betreuung</option>
+                            <option>Berufsschule</option>
+                            <option>Design</option>
+                            <option>Ernährung und Hauswirtschaft</option>
+                            <option>Naturwissenschaft und Umwelttechnik</option>
+                            <option>Gesundheit und Soziales'</option>
+                            <option>Technik</option>
+                            <option>Wirtschaft</option>
+                            <option>Automatisierungstechnik</option>
+                            <option>Fremdsprachen in Wirtschaft und Verwaltung</option>
+                            <option>Hotel-, Gaststätten- und Fremdenverkehrsgewerbe</option>
+                            <option>Wirtschaftsinformatik</option>
+                            <option>Akademie für Betriebs- und Unternehmensführung</option>
+                            <option>Fachschule für Sozialpädagogik</option>
+                            <option>Fachschule für das Hotel und Gaststättengewerbe</option>
+                            <option>Fachschule für Meister/-innen der Hauswirtschaft</option>
+                            <option>Fachschule für Technik</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row Reihen">
+                    <div class="col-sm-12">
+                        <button onclick="getLocation()" style="width:100%; height:100%" > Aktuelle Position </button>
+                    </div>
+                </div>
+                <div class="row Reihen">
+                    <div class="col">
+                        <button type="submit" onclick="getSchulen()" style="font-size:25px ;width:100%"> Los! </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    <div id="VolleAnzeige" class="container-fluid">
+    </div>
+    <script>
+        var map, infoWindow;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 49.397373, lng: 6.935992 },
+                zoom: 9
+            });
+            infoWindow = new google.maps.InfoWindow;
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByrFSb-3ZBmtjum59uZ0pOT8ZIUcLrLfc&callback=initMap">
+    </script>
+    <script src="scripts/Suche.js"></script>
+</body>
+</html>

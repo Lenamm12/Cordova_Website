@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Pfade zum Abschluss</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../www/css/Uebersicht.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <script src="../www/scripts/Uebersicht.js"></script>
+</head>
+<body>
+    <!--<div class="jumbotron text-center" style="margin-bottom:5px">
+        <h1>Willkommen</h1>
+        <p>Hier findest du deinen Weg!</p>
+    </div>-->
+    <nav class="navbar navbar-expand-sm bg-white navbar-light">
+        <a class="navbar-brand" href="index.html"><img src="images/logo-saarland.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Suche.html">Suche</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="unsereschulen.html">Unsere Schulen</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UEbersicht.html">Übersicht</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7" style="margin-top:5px">
+                <strong>Ich habe:</strong>
+                <select id="Abschluesse" onmouseover="Reset()">
+                    <option value="Bitte auswahlen">Bitte auswählen</option>
+                    <option value="keinen Abschluss" id="keinen Abschluss">keinen Abschluss</option>
+                    <option value="Hauptschulabschluss" id="Hauptschulabschluss">Hauptschulabschluss</option>
+                    <option value="Mittlerer Bildungsabschluss" id="Mittlerer Bildungsabschluss">Mittlerer Bildungsabschluss</option>
+                    <option value="Fachhochschulreife" id="Fachhochschulreife">Fachhochschulreife</option>
+                    <option value="Allgemeine Hochschulreife" id="Allgemeine Hochschulreife">Allgemeine Hochschulreife</option>
+                </select>
+            </div>
+            <div class="col-sm-5" style="margin-top:5px">
+                <button type="button" id="meinbutton" onclick="Auswaehlen()">Was kann ich machen?</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="width:100%">
+            <div class="col" id="chart" style="display:none">
+                <ol class="organizational-chart" id="orgchart">
+                    <li>
+                        <div>
+                            <h1 id="Abschluss"></h1>
+                        </div>
+                        <ol id="zweiteebene">
+                            <li id="ersterzweig">
+                                <div>
+                                    <h2 id="Ziel1"></h2>
+                                </div>
+                                <ol id="dritteebene1">
+                                    <li>
+                                        <div>
+                                            <h3 id="Moeglichkeit11"></h3>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top:3em">
+        <div class="row" id="keinAbschlussTxt" style="display:none">
+            <div class="col1">
+                <p id="BVJ">Jugendliche ohne Versetzung in Klasse 9 müssen zuerst ein <b>Berufsvorbereitungsjahr</b> in einer Produktionsschule oder Werkstattschule ableisten. Möglich ist eine Teilnahme an der Prüfung zum Erwerb des Hauptschulabschlusses und der Berechtigung zum Übergang in die zweijährige Berufsfachschule.</p>
+                <p id="BGJ">Nach Erfüllung der Vollzeitschulpflicht und der Versetzung in Klassenstufe 9 oder nach dem erfolgreichen Besuch des Berufsvorbereitungsjahres kann im <b>Berufsgrundbildungsjahr</b> eine berufliche Grundbildung in einem Berufsfeld erlernt werden.</p>
+                <p id="BGS">Die <b>Berufsgrundschule</b> vermittelt Grundkenntnisse und Fertigkeiten im hauswirtschaftlich-sozialpflegerischen Bereich. Voraussetzung ist die Versetzung in die Klassenstufe 9 oder der erfolgreiche Besuch des Berufsvorbereitungsjahres.</p>
+            </div>
+        </div>
+        <div class="row" id="HauptschulTxt" style="display:none">
+            <div class="col-md-6">
+                <p id="Berufsschule">Die Berufsausbildung im Sinne einer dualen Ausbildung erfolgt innerhalb 2 bis 3,5 Jahren an einer <b>Berufsschule</b> und im Betrieb. Voraussetzung ist dabei ein Ausbildungsvertrag in einem anerkannten Ausbildungsberuf. Während der Betrieb die praktische Ausbildung übernimmt, vermittelt die Berufsschule Allgemeinwissen und die theoretischen Kenntnisse, die zur Ausübung des Berufes erforderlich sind.</p>
+            </div>
+            <div class="col-md-6">
+                <p id="BFS">An einer <b>Berufsfachschule</b> (darunter Gewerbeschule, Handelsschule und Sozialpflegeschule) werden in zwei Jahren berufsübergreifende Kenntnisse und Fertigkeiten und bereitet auf eine berufliche Ausbildung vor. </p>
+            </div>
+        </div>
+        <div class="row" id="MittlereTxt" style="display:none">
+            <div class="col-md-6">
+                <p id="Fachschule">Die <b>Fachschule</b> setzt eine berufliche Erstausbildung und eine praktische Berufserfahrung in den entsprechenden Fachbereichen voraus und dient zur Weiterbildung im entsprechendem Berufsfeld. Die zweijährige Fachschule vermittelt unter bestimmten Voraussetzungen die Fachhochschulreife.</p>
+                <p id="Berufsschule">Die Berufsausbildung im Sinne einer dualen Ausbildung erfolgt innerhalb 2 bis 3,5 Jahren an einer <b>Berufsschule</b> und im Betrieb. Voraussetzung ist dabei ein Ausbildungsvertrag in einem anerkannten Ausbildungsberuf. Während der Betrieb die praktische Ausbildung übernimmt, vermittelt die Berufsschule Allgemeinwissen und die theoretischen Kenntnisse, die zur Ausübung des Berufes erforderlich sind. </p>
+                <p id="Fachoberschule">Die <b>Fachoberschule</b> umfasst die Klassenstufen 11 und 12 und bereitet auf ein Studium an einer Fachhochschule sowie auf anspruchsvolle Ausbildungsberufe vor. In Klassenstufe 11 verbringen die Schüler die Hälfte der Woche im Rahmen eines Praktikums in einem Betrieb und die andere Hälfte im Unterricht in der Fachoberschule. In Klassenstufe 12 bereiten sich die Schüler im Vollzeitunterricht auf die Abschlussprüfung zum Erwerb der Fachhochschulreife vor.</p>
+            </div>
+            <div class="col-md-6">
+                <p id="Oberstufengymnasium">Das <b>Oberstufengymnasium</b> führt als gymnasiale Oberstufe mit berufsbezogenen Fachrichtungen zur Allgemeinen Hochschulreife. Am Ende des Bildungsgangs nehmen die Schüler an der zentralen Abiturprüfung der Gymnasien teil. Die Allgemeine Hochschulreife berechtigt den Zugang zum Studium an allen Hochschulen in Deutschland.</p>
+            </div>
+        </div>
+        <div class="row" id="FachhochschulreifeTxt" style="display:none">
+            <div class="col-md-6">
+                <p id="Oberstufengymnasium">Das <b>Oberstufengymnasium</b> führt als gymnasiale Oberstufe mit berufsbezogenen Fachrichtungen zur Allgemeinen Hochschulreife. Am Ende des Bildungsgangs nehmen die Schüler an der zentralen Abiturprüfung der Gymnasien teil. Die Allgemeine Hochschulreife berechtigt den Zugang zum Studium an allen Hochschulen in Deutschland.</p>
+            </div>
+            <div class="col-md-6">
+                <p id="HBFS">Eine <b>Höhere Berufsfachschule</b> ist eine Alternative zum Studium, bei der man nach 2 oder 3 Jahren einen staatlich geprüften Abschluss erhält. Neben dem Unterricht wird auch ein Betriebspraktikum gefordert, das je nach Schwerpunkt 6 bis 8 Wochen oder ein Jahr im Ausland umfasst. Nach der Schule ist der direkte Berufseinstieg möglich.</p>
+            </div>
+        </div>
+        <div class="row" id="HochschulreifeTxt" style="display:none">
+            <div class="col-md-6">
+                <p id="Bachelor">
+                    Mit dem Bachelor Studium erwirbt man nach 3 Jahren einen berufsqualifizierten Hochschulabschluss. Darauf aufbauend kann man in einem 2 bis 4 Semester dauernden Master Studium das Fachwissen ausbauen und sich weiterqualifizieren.
+                    An praxisorientierten <b>Fachhochschulen</b> ist ein Praxissemester vorgesehen, in dem ein Praktika absolviert wird; wobei man an einer <b>Universität</b> das Praktika während der Semesterferien vorgesehen ist.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p id="HBFS">Eine <b>Höhere Berufsfachschule</b> ist eine Alternative zum Studium, bei der man nach 2 oder 3 Jahren einen staatlich geprüften Abschluss erhält. Neben dem Unterricht wird auch ein Betriebspraktikum gefordert, das je nach Schwerpunkt 6 bis 8 Wochen oder ein Jahr im Ausland umfasst. Nach der Schule ist der direkte Berufseinstieg möglich.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
